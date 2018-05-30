@@ -1,1 +1,31 @@
-# controlRobotScript
+# Baxter control
+
+This directory is to share a small script that allow you to control basic function of Baxter.
+
+## Installation ##
+
+Put controlRobot.sh at the root of your catkin workspace along side with baxter.sh
+Change ROS_MASTER_UI and ROS_IP in controlRobot.sh to reflect your environment
+[Baxter_eyes](https://github.com/Anne-Gaisne/baxter_eyes) package is recommended.
+
+## Usage ##
+
+All the command given are executed from the root of your catkin workspace (~/catkin_ws)
+- To tuck Baxter's arm :
+```
+./controlRobot.sh -t
+```
+- To untuck Baxter's arm :
+```
+./controlRobot.sh -u
+```
+- To display eyes on Baxter's screen (baxter_eyes package mandatory) :
+```
+./controlRobot.sh -e
+```
+- To display Camera on Baxter's screen (baxter_eyes package mandatory) :
+```
+./controlRobot.sh -c cameraTopicImage1 cmTopicImg2 cmTopicImg3 cmTopicImg4
+```
+cameraTopicImage can be none to display nothing. Please note that if all entry are at none or not valid the script will execute but no change will be shown on Baxter's screen.
+If one of the cameraTopicImage doesn't exist it will leave a blank space.
