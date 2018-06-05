@@ -12,7 +12,10 @@ if [ $1 = "-t" ] || [ $1 = "-u" ] #for tucking and untucking arm
 then
 	rosrun baxter_tools enable_robot.py -e
 	rosrun baxter_tools tuck_arms.py "$1"
-elif [ $1 = "-e" ] #to display eyes on baxter tablet
+elif [ $1 = "-d" ] || [ $1 = "-e" ] || [ $1 = "-r" ]
+then
+	rosrun baxter_tools enable_robot.py "$1"
+elif [ $1 = "-y" ] #to display eyes on baxter tablet
 then 
 	#kill other display node
 	rosnode kill /baxter_camera_display_node
@@ -44,5 +47,5 @@ then
 			rosrun baxter_tools camera_control.py -o head_camera
 		fi
 	fi
-	rosrun baxter_eyes baxter_camera_display_node "$2" "$3" "$4" "$5"
+	rosrun baxter_eyes baxter_camera_display_node "$2" "$3" "$4" "$5" &
 fi

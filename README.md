@@ -11,6 +11,18 @@ Change ROS_MASTER_UI and ROS_IP in controlRobot.sh to reflect your environment
 ## Usage ##
 
 All the command given are executed from the root of your catkin workspace (~/catkin_ws)
+- To enable Baxter :
+```
+./controlRobot.sh -e
+```
+- To disable Baxter :
+```
+./controlRobot.sh -d
+```
+- To reset Baxter :
+```
+./controlRobot.sh -r
+```
 - To tuck Baxter's arm :
 ```
 ./controlRobot.sh -t
@@ -21,7 +33,7 @@ All the command given are executed from the root of your catkin workspace (~/cat
 ```
 - To display eyes on Baxter's screen (baxter_eyes package mandatory) :
 ```
-./controlRobot.sh -e
+./controlRobot.sh -y
 ```
 - To display Camera on Baxter's screen (baxter_eyes package mandatory) :
 ```
